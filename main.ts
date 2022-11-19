@@ -1,10 +1,12 @@
 // @deno-types="npm:@types/express"
 import express from "npm:express@4.18.2";
 import data from "./data.json" assert { type: "json" };
+import { hi } from "./src/test.bs.js";
 
 const app = express();
 
 app.get("/", (req, res) => {
+  hi();
   res.send("Welcome to the Dinosaur API!");
 });
 
