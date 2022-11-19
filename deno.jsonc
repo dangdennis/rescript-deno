@@ -1,6 +1,6 @@
 {
     "tasks": {
-        "start": "deno run --allow-read --allow-write --allow-env --node-modules-dir main.ts",
+        "start": "deno run --allow-read --allow-write --allow-env --allow-net --node-modules-dir main.ts",
         "res:b": "deno run --allow-read --allow-write --allow-env --allow-run npm:rescript",
         "res:dev": "deno run --allow-read --allow-write --allow-env --allow-run npm:rescript build -w"
     }
