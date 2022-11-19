@@ -5,12 +5,12 @@ import { hi } from "./src/test.bs.js";
 
 const app = express();
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   hi();
   res.send("Welcome to the Dinosaur API!");
 });
 
-app.get("/api", (req, res) => {
+app.get("/api", (_req, res) => {
   res.send(data);
 });
 
@@ -28,12 +28,3 @@ app.get("/api/:dinosaur", (req, res) => {
 });
 
 app.listen(8000);
-// import { Application } from "https://deno.land/x/oak@v11.1.0/mod.ts";
-
-// const app = new Application();
-
-// app.use((ctx) => {
-//   ctx.response.body = "Hello from Deno and AWS Lightsail!";
-// });
-
-// await app.listen({ port: 8000 });
