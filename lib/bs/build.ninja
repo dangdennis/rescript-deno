@@ -1,0 +1,13 @@
+rescript = 1
+rule astj
+  command = /Users/dennisdang/Library/Caches/deno/npm/registry.npmjs.org/rescript/10.0.1/darwinarm64/bsc.exe  -bs-v 10.0.1  -absname -bs-ast -o $out $i
+o src/test.ast : astj ../../src/test.res
+rule deps
+  command = /Users/dennisdang/Library/Caches/deno/npm/registry.npmjs.org/rescript/10.0.1/darwinarm64/bsb_helper.exe -hash fc8c7b42bf3dc1192c8822a6fb4df023 $in
+  restat = 1
+o src/test.d : deps src/test.ast
+rule mij
+  command = /Users/dennisdang/Library/Caches/deno/npm/registry.npmjs.org/rescript/10.0.1/darwinarm64/bsc.exe -I src   -bs-package-name yomi-api -bs-package-output es6:$in_d:.bs.js $i
+  dyndep = 1
+  restat = 1
+o src/test.cmj src/test.cmi ../../src/test.bs.js : mij src/test.ast

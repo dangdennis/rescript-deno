@@ -1,0 +1,10 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o test.cmi : cp ../bs/src/test.cmi
+o test.cmj : cp ../bs/src/test.cmj
+o test.cmt : cp ../bs/src/test.cmt
+o test.res : cp ../../src/test.res
+build install.stamp : touch test.cmi test.cmj 

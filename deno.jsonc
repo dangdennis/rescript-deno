@@ -1,0 +1,7 @@
+{
+    "tasks": {
+        "res:b": "deno run --allow-read --allow-write npm:rescript",
+        "res:dev": "deno run --allow-read --allow-write npm:rescript build -w",
+        "purs": "deno run --allow-read --allow-write npm:purs init"
+    }
+}
